@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Форма создания и редактирования друзей</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-12 my-3">
+            <h2 class="text-center my-3">Форма создания и редактирования друзей:</h2>
+            <form method="post"> 
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-success my-3" type="submit" value="Сохранить">
+                <a class="btn btn-danger my-3" href="{%url 'p_library:friend_list'%}">Отмена</a>
+            </form>
+        </div>  
+    </div>
+</body>
+</html>
